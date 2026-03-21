@@ -213,6 +213,92 @@ footer {
 footer a { color: var(--blue2); text-decoration: none; }
 footer a:hover { color: var(--orange); }
 
+/* CTA Button */
+.cta-wrap {
+  position: fixed;
+  top: 28px;
+  right: 28px;
+  z-index: 100;
+  animation: fadeUp .8s ease .4s both;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0;
+  overflow: visible;
+}
+
+.cta-arrow-svg {
+  width: 340px;
+  height: 180px;
+  position: absolute;
+  bottom: -175px;
+  right: -10px;
+  pointer-events: none;
+}
+
+.cta-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(77,184,255,.1);
+  border: 2px solid var(--blue2);
+  color: var(--blue2);
+  text-decoration: none;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 16px 22px;
+  border-radius: 14px;
+  box-shadow: 0 0 24px rgba(77,184,255,.18);
+  transition: all .25s;
+  white-space: nowrap;
+}
+.cta-btn:hover {
+  background: rgba(77,184,255,.2);
+  box-shadow: 0 0 40px rgba(77,184,255,.35);
+  transform: translateY(-2px);
+}
+
+.cta-text { line-height: 1.25; }
+.cta-main { display: block; }
+.cta-sub {
+  display: block;
+  font-size: .62rem;
+  letter-spacing: .18em;
+  opacity: .65;
+  font-family: "Exo 2", sans-serif;
+  font-weight: 400;
+  margin-top: 1px;
+}
+
+.cta-arrow-icon {
+  font-size: 1.3rem;
+  transition: transform .25s;
+  flex-shrink: 0;
+}
+.cta-btn:hover .cta-arrow-icon { transform: translateX(5px); }
+
+@media (max-width: 700px) {
+  .cta-wrap {
+    position: fixed;
+    top: auto; right: auto;
+    bottom: 0; left: 0;
+    width: 100%;
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .cta-arrow-svg { display: none; }
+  .cta-btn {
+    border-radius: 14px 14px 0 0;
+    border-bottom: none;
+    width: 100%;
+    justify-content: center;
+    padding: 14px 24px;
+  }
+}
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -290,5 +376,16 @@ footer a:hover { color: var(--orange); }
   </footer>
 
 </div>
+<!-- CTA -->
+<div class="cta-wrap">
+  <a class="cta-btn" href="https://www.skool.com/miless-group-4588/classroom" target="_blank">
+    <span class="cta-text">
+      <span class="cta-main">Learn the Basics of 3D</span>
+      <span class="cta-sub">3D Launchpad Classroom</span>
+    </span>
+    <span class="cta-arrow-icon">&#8594;</span>
+  </a>
+</div>
+
 </body>
 </html>
